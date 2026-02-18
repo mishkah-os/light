@@ -1,0 +1,415 @@
+
+    .mishkah-erd-host{
+      color-scheme: light dark;
+      --background: #f8fafc;
+      --surface-0: #f8fafc;
+      --surface-1: #ffffff;
+      --surface-2: #f1f5f9;
+      --card: #ffffff;
+      --card-foreground: #0f172a;
+      --foreground: #0f172a;
+      --muted: #475569;
+      --muted-foreground: #475569;
+      --border: #cfd8ea;
+      --input: #dbe3f8;
+      --accent: #eaf2ff;
+      --accent-foreground: #102341;
+      --primary: #2563eb;
+      --primary-foreground: #f8fafc;
+      --secondary: #d8e1ff;
+      --secondary-foreground: #102341;
+      --destructive: #ef4444;
+      --destructive-foreground: #ffffff;
+      --ring: #2563eb;
+      --shadow: 0 28px 60px -28px rgba(15, 23, 42, 0.35);
+      --radius: 16px;
+      --toolbar-height: 3.5rem;
+    }
+
+    .mishkah-erd-host.dark{
+      color-scheme: dark;
+      --background: #0b1220;
+      --surface-0: #0b1220;
+      --surface-1: #101a2c;
+      --surface-2: #16243a;
+      --card: #111d30;
+      --card-foreground: #e2e8f0;
+      --foreground: #f8fafc;
+      --muted: #94a3b8;
+      --muted-foreground: #94a3b8;
+      --border: #1f2a3d;
+      --input: #223044;
+      --accent: #1e2a3f;
+      --accent-foreground: #e2e8f0;
+      --primary: #60a5fa;
+      --primary-foreground: #0b1220;
+      --secondary: #27364e;
+      --secondary-foreground: #e2e8f0;
+      --destructive: #f87171;
+      --destructive-foreground: #0b1220;
+      --ring: #60a5fa;
+      --shadow: 0 30px 70px -36px rgba(8, 15, 30, 0.75);
+      --radius: 16px;
+    }
+
+    .mishkah-erd-host[data-theme="dark"], .dark .mishkah-erd-host{
+      color-scheme: dark;
+      --background: #0b1220;
+      --surface-0: #0b1220;
+      --surface-1: #101a2c;
+      --surface-2: #16243a;
+      --card: #111d30;
+      --card-foreground: #e2e8f0;
+      --foreground: #f8fafc;
+      --muted: #94a3b8;
+      --muted-foreground: #94a3b8;
+      --border: #1f2a3d;
+      --input: #223044;
+      --accent: #1e2a3f;
+      --accent-foreground: #e2e8f0;
+      --primary: #60a5fa;
+      --primary-foreground: #0b1220;
+      --secondary: #27364e;
+      --secondary-foreground: #e2e8f0;
+      --destructive: #f87171;
+      --destructive-foreground: #0b1220;
+      --ring: #60a5fa;
+      --shadow: 0 30px 70px -36px rgba(8, 15, 30, 0.75);
+      --radius: 16px;
+    }
+
+    .mishkah-erd-host *, .mishkah-erd-host *::before, .mishkah-erd-host *::after{
+      box-sizing: border-box;
+    }
+
+    .mishkah-erd-host, .mishkah-erd-host{
+      height: 100%;
+      min-height: 100vh;
+      margin: 0;
+      background: var(--background, #0f1115);
+      color: var(--foreground, #f8fafc);
+      font-family: "Tajawal", "Cairo", system-ui, sans-serif;
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+
+    .mishkah-erd-host{
+      display: flex;
+      min-height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+
+    .mishkah-erd-host #app{
+      flex: 1 1 auto;
+      display: flex;
+    }
+
+    .mishkah-erd-host textarea[readonly]{
+      user-select: all;
+    }
+
+    .mishkah-erd-host .hidden{
+      display: none !important;
+    }
+
+    .mishkah-erd-host #erd-diagram{
+      cursor: grab;
+      overflow: auto;
+      touch-action: pan-x pan-y;
+      scrollbar-gutter: stable;
+    }
+
+    .mishkah-erd-host #erd-diagram:active, .mishkah-erd-host #erd-diagram[data-panning="true"]{
+      cursor: grabbing;
+    }
+
+    .mishkah-erd-host #erd-diagram[data-driver='fake'] svg{
+      display: block;
+      min-width: 100%;
+      min-height: 100%;
+    }
+
+    .mishkah-erd-host #erd-diagram .x6-graph-scroller{
+      overflow: auto !important;
+      cursor: inherit;
+    }
+
+    .mishkah-erd-host #erd-diagram .x6-graph-scroller-content{
+      min-width: 100%;
+      min-height: 100%;
+    }
+
+    .mishkah-erd-host .json-editor-shell{
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
+      background: color-mix(in oklab, var(--surface-1) 94%, transparent);
+      padding: 1.25rem;
+      box-shadow: 0 26px 52px -30px rgba(15, 23, 42, 0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mishkah-erd-host .json-editor-toolbar{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .mishkah-erd-host .json-editor-tabs{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+      background: color-mix(in oklab, var(--surface-2) 92%, transparent);
+      padding: 0.35rem;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.08);
+    }
+
+    .mishkah-erd-host .json-editor-viewer{
+      position: relative;
+      border-radius: calc(var(--radius) + 2px);
+      border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+      background: color-mix(in oklab, var(--surface-0) 96%, transparent);
+      padding: 1rem;
+      max-height: min(70vh, 48rem);
+      overflow: auto;
+      font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "SFMono-Regular", ui-monospace, monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      direction: ltr;
+      color: color-mix(in srgb, var(--card-foreground) 92%, transparent);
+      box-shadow: inset 0 1px 1px rgba(15, 23, 42, 0.05);
+    }
+
+    .mishkah-erd-host .json-tree-viewer{
+      padding: 0;
+      overflow: auto;
+      max-height: min(70vh, 48rem);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .mishkah-erd-host .json-tree-viewer[data-json-ready='true'] .json-tree-fallback{
+      display: none;
+    }
+
+    .mishkah-erd-host .json-tree-error{
+      margin: 0.5rem 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: calc(var(--radius) - 6px);
+      background: color-mix(in srgb, var(--destructive) 8%, transparent);
+      color: color-mix(in srgb, var(--destructive-foreground) 86%, transparent);
+      font-size: 0.8rem;
+    }
+
+    .mishkah-erd-host .json-tree-fallback{
+      margin: 0;
+      padding: 1rem;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      direction: ltr;
+      background: transparent;
+      color: inherit;
+      overflow: auto;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .mishkah-erd-host .json-tree{
+      padding: 0.75rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.35rem;
+      font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "SFMono-Regular", ui-monospace, monospace;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      direction: ltr;
+      width: 100%;
+    }
+
+    .mishkah-erd-host .json-tree-node{
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      color: color-mix(in srgb, var(--card-foreground) 92%, transparent);
+      width: 100%;
+    }
+
+    .mishkah-erd-host .json-tree-header{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 0.45rem;
+      width: 100%;
+    }
+
+    .mishkah-erd-host .json-tree-node--branch{
+      font-weight: 500;
+    }
+
+    .mishkah-erd-host .json-tree-node--collapsed>.json-tree-children{
+      display: none;
+    }
+
+    .mishkah-erd-host .json-tree-toggle, .mishkah-erd-host .json-tree-spacer{
+      width: 1.45rem;
+      flex: 0 0 1.45rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+
+    .mishkah-erd-host .json-tree-toggle{
+      border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
+      background: color-mix(in srgb, var(--surface-2) 80%, transparent);
+      color: color-mix(in srgb, var(--foreground) 94%, transparent);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      height: 1.45rem;
+      cursor: pointer;
+      box-shadow: inset 0 1px 1px rgba(15, 23, 42, 0.04);
+      transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .mishkah-erd-host .json-tree-toggle:hover, .mishkah-erd-host .json-tree-toggle:focus{
+      outline: none;
+      border-color: color-mix(in srgb, var(--primary) 70%, transparent);
+      background: color-mix(in srgb, var(--primary) 16%, transparent);
+      color: color-mix(in srgb, var(--primary-foreground) 94%, transparent);
+    }
+
+    .mishkah-erd-host .json-tree-key{
+      color: color-mix(in srgb, var(--primary) 72%, transparent);
+    }
+
+    .mishkah-erd-host .json-tree-separator{
+      color: color-mix(in srgb, var(--muted-foreground) 74%, transparent);
+    }
+
+    .mishkah-erd-host .json-tree-summary{
+      color: color-mix(in srgb, var(--muted-foreground) 78%, transparent);
+      font-weight: 400;
+    }
+
+    .mishkah-erd-host .json-tree-value{
+      font-weight: 400;
+    }
+
+    .mishkah-erd-host .json-tree-value-string{
+      color: color-mix(in srgb, #16a34a 78%, transparent);
+    }
+
+    .mishkah-erd-host .json-tree-value-number{
+      color: color-mix(in srgb, #0284c7 82%, transparent);
+    }
+
+    .mishkah-erd-host .json-tree-value-boolean{
+      color: color-mix(in srgb, #d97706 80%, transparent);
+    }
+
+    .mishkah-erd-host .json-tree-value-null{
+      color: color-mix(in srgb, #9333ea 78%, transparent);
+    }
+
+    .mishkah-erd-host .json-tree-value-unknown{
+      color: color-mix(in srgb, var(--muted-foreground) 86%, transparent);
+    }
+
+    .mishkah-erd-host .json-tree-children{
+      margin-inline-start: 1.45rem;
+      padding-inline-start: 1rem;
+      border-inline-start: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .mishkah-erd-host .json-editor-viewer code{
+      white-space: pre;
+      display: block;
+    }
+
+    .mishkah-erd-host .json-editor-empty{
+      border: 1px dashed color-mix(in srgb, var(--border) 72%, transparent);
+      border-radius: calc(var(--radius) + 2px);
+      background: color-mix(in oklab, var(--surface-0) 88%, transparent);
+      padding: 2.5rem 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: color-mix(in srgb, var(--muted-foreground) 88%, transparent);
+    }
+
+    .mishkah-erd-host .json-textarea{
+      width: 100%;
+      min-height: 20rem;
+      resize: vertical;
+      border-radius: calc(var(--radius) + 2px);
+      border: 1px solid color-mix(in srgb, var(--border) 84%, transparent);
+      background: color-mix(in oklab, var(--surface-0) 96%, transparent);
+      color: color-mix(in srgb, var(--card-foreground) 94%, transparent);
+      font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "SFMono-Regular", ui-monospace, monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      padding: 1rem;
+      direction: ltr;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.06);
+    }
+
+    .mishkah-erd-host .json-textarea:focus{
+      outline: none;
+      border-color: color-mix(in srgb, var(--primary) 80%, transparent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 18%, transparent);
+    }
+
+    .mishkah-erd-host .CodeMirror{
+      border-radius: calc(var(--radius) + 2px);
+      border: 1px solid color-mix(in srgb, var(--border) 84%, transparent);
+      background: color-mix(in oklab, var(--surface-0) 96%, transparent);
+      color: color-mix(in srgb, var(--card-foreground) 94%, transparent);
+      font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "SFMono-Regular", ui-monospace, monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      min-height: 20rem;
+      height: auto;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.06);
+    }
+
+    .mishkah-erd-host .CodeMirror-scroll{
+      max-height: 24rem;
+    }
+
+    .mishkah-erd-host .CodeMirror-gutters{
+      background: color-mix(in oklab, var(--surface-2) 92%, transparent);
+      border-color: color-mix(in srgb, var(--border) 78%, transparent);
+    }
+
+    .mishkah-erd-host .CodeMirror-linenumber{
+      color: color-mix(in srgb, var(--muted-foreground) 86%, transparent);
+    }
+
+    .mishkah-erd-host .CodeMirror-selected{
+      background: color-mix(in srgb, var(--primary) 30%, transparent) !important;
+    }
+
+    .mishkah-erd-host .CodeMirror-cursor{
+      border-left: 2px solid color-mix(in srgb, var(--primary) 90%, transparent);
+    }
+
+    .mishkah-erd-host[data-readonly="true"] [data-m-gkey~="erd:cloud:save"],
+    .mishkah-erd-host[data-readonly="true"] [data-m-gkey~="erd:cloud:create-branch"],
+    .mishkah-erd-host[data-readonly="true"] [data-m-gkey~="erd:cloud:create-module"],
+    .mishkah-erd-host[data-readonly="true"] [data-m-gkey~="erd:cloud:create-schema"],
+    .mishkah-erd-host[data-readonly="true"] [data-m-gkey~="erd:library:new"],
+    .mishkah-erd-host[data-readonly="true"] [data-m-gkey~="erd:library:delete"],
+    .mishkah-erd-host[data-readonly="true"] [data-m-gkey~="erd:schema:meta:save"]{
+      display: none !important;
+    }
+  
